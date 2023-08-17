@@ -40,14 +40,6 @@ public class Radio {
         }
     }
 
-    public void Minus() {
-        if (currentStation != 0) {
-            currentStation--;
-        } else {
-            currentStation = maxStation;
-        }
-    }
-
     public int getCurrentStation() {
         return currentStation;
     }

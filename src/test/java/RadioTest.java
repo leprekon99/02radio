@@ -13,8 +13,20 @@ public class RadioTest {
 
     }
 
+    @Test                                                  //Задание 1 - радиостанции
+    public void Twobetween0and9() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(10);
+
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+
     @Test                                                  //Задание 2 - радиостанции (следующая радиостанция)
-    public void metodNext() {
+    public void onemetodNext() {
         Radio radio = new Radio();
         radio.setCurrentStation(8);
 
@@ -26,14 +38,39 @@ public class RadioTest {
 
     }
 
+    @Test                                                  //Задание 2 - радиостанции (равно 0)
+    public void twometodNext() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(9);
+
+        radio.next();
+
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+
+    }
+
     @Test                                                 //Задание 3 - радиостанции (предыдущая радиостанция)
-    public void metodPrev() {
+    public void OnemetodPrev() {
         Radio radio = new Radio();
         radio.setCurrentStation(6);
 
         radio.prev();
 
         int expected = 5;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+
+    }
+    @Test                                                 //Задание 3 - радиостанции (равно 9)
+    public void TwometodPrev() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(0);
+
+        radio.prev();
+
+        int expected = 9;
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
 
@@ -74,7 +111,27 @@ public class RadioTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
+    @Test                                                  //Задание 1 - звук
+    public void OneVolume() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(-1);
 
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test                                                  //Задание 1 - звук
+    public void TwoVolume() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(101);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+
+    }
     @Test                                              //Задание 1 - звук (увеличение)
     public void increaseVolume() {
         Radio radio = new Radio();
